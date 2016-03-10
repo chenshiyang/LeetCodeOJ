@@ -59,7 +59,8 @@ public class BestTimeToBuyAndSellStock {
         int last = 0, current = 0, maxProfit = prices[1] - prices[0];
         
         for(int i = 1; i < prices.length; i ++){
-        	current = last > 0? last + prices[i] - prices[i - 1] : prices[i] - prices[i - 1];
+        	int profit = prices[i] - prices[i - 1];
+        	current = last > 0? last + profit : profit;
         	maxProfit = current > maxProfit? current : maxProfit;
         	last = current;
         }

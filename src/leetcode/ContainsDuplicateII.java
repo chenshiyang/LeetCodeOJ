@@ -42,7 +42,7 @@ public class ContainsDuplicateII {
 
         HashMap<Integer, Integer> table = new HashMap<Integer, Integer>();
         for(int i = 0; i < nums.length; i ++){
-        	if(table.containsKey(nums[i]) && table.get(nums[i]) - i <= k)
+        	if(table.containsKey(nums[i]) && i - table.get(nums[i]) <= k)
         		return true;
         	else
         		table.put(nums[i], i);
